@@ -1,0 +1,66 @@
+
+body, html {
+	height: 100%;
+}
+  
+  
+
+h1{
+	color: darkgreen;
+}
+.bg-image{
+	background-image: url("../static/img/coin.png");
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+	
+  
+  
+.bg-text {
+	background-color: rgba(0,0,0, 0.4);
+	color: white;
+	font-weight: bold;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.btn{
+	padding-top: 20px;
+}
+  
+.btn button{
+	background-color: green;
+	font-family: 'Big Shoulders Stencil Display', cursive;
+    color: white;
+	border-radius: 20px;
+	padding: 10px;
+	  
+}
+  
+.btn button:hover{
+	background-color: darkgreen;
+	transition: 1s;
+    box-shadow: 5px 5px 5px 5px black;
+}
+
+@media (max-width: 576px) {
+    .card {
+        margin: 1rem;
+    }
+}
+  
+			  

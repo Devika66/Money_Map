@@ -1,0 +1,100 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+    <meta charset="UTF-8">
+    <title>Edit Profile</title>
+</head>
+<body>
+<div class="container emp-profile">
+    <form method="post" action="{% url 'profile_update' add.id %}">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-10">
+                <div class="profile-head">
+                    <h5>{{ user }}</h5>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab"
+                               href="#home" role="tab" aria-controls="home" aria-selected="true">Edit Info</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex align-items-center">
+                <input type="submit" class="profile-edit-btn" value="Save">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label>User ID</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{ user }}</p>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label>First Name</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="fname" class="form-control" value="{{ user.first_name }}">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label>Last Name</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="lname" class="form-control" value="{{ user.last_name }}">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label>Email</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" name="email" class="form-control" value="{{ user.email }}">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label>Savings</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" name="Savings" class="form-control" value="{{ user.userprofile.Savings }}">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label>Income</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" name="income" class="form-control" value="{{ user.userprofile.income }}">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

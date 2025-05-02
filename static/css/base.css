@@ -1,0 +1,123 @@
+/* General Reset */
+ html {
+    
+    font-family:  sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    
+}
+
+body{
+    margin:0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    
+}
+
+html,body{
+    height:100%;
+
+}
+
+/* Ensure top navbar stays fixed and above all */
+.sb-topnav {
+    z-index: 1050;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+/* Wrapper for sidebar and content */
+.sb-navfixed #layoutSidenav {
+    display: flex;
+}
+
+/* Sidebar styling */
+#layoutSidenav_nav {
+    width: 250px;
+    height: 100vh;
+    z-index: 1038;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 56px; /* height of top navbar */
+    overflow-y: auto;
+    background-color: #343a40;
+}
+
+/* Main content area */
+#layoutSidenav_content {
+    margin-left: 250px;
+    flex-grow: 1;
+    padding: 80px 20px 20px; /* top padding to avoid top navbar */
+    overflow-x: hidden;
+}
+
+/* Sidebar menu items */
+.sb-sidenav .nav-link {
+    color: #cfd8dc;
+    font-weight: 500;
+    padding: 10px 20px;
+}
+
+.sb-sidenav .nav-link:hover,
+.sb-sidenav .nav-link.active {
+    background-color: #495057;
+    color: #ffffff;
+}
+
+/* Menu headings in sidebar */
+.sb-sidenav-menu-heading {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #adb5bd;
+    padding: 10px 20px 5px;
+}
+
+/* Sidebar Footer */
+.sb-sidenav-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #212529;
+    color: #adb5bd;
+    font-size: 0.9rem;
+}
+
+/* Toggle functionality */
+body.sb-sidenav-toggled #layoutSidenav_nav {
+    margin-left: -250px;
+    transition: all 0.3s;
+}
+
+body.sb-sidenav-toggled #layoutSidenav_content {
+    margin-left: 0;
+    transition: all 0.3s;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    #layoutSidenav_nav {
+        margin-left: -250px;
+    }
+
+    body.sb-sidenav-toggled #layoutSidenav_nav {
+        margin-left: 0;
+    }
+
+    #layoutSidenav_content {
+        margin-left: 0;
+    }
+
+    body.sb-sidenav-toggled #layoutSidenav_content {
+        margin-left: 250px;
+    }
+}
+

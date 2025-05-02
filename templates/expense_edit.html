@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>My Wallet</title>
+        <link rel="stylesheet"  href="{% static 'css/expense_edit.css' %}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="bg-primary">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
+                <main>
+                    <div class="container2">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header">
+                                        <h3 class="text-center font-weight-light my-4">Edit Expense</h3>
+                                    </div>
+                                    <form method="post" action="{% url 'addmoney_update' addmoney.id %}">
+                                        {% csrf_token %}
+    
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="add_expense">
+                                                <input class="form-check-input" type="radio" name="addmoney_category" id="add_expense" value="Expense" {% if addmoney.addmoney_category == "Expense" %}checked{% endif %} required>
+                                                Expense
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="add_income">
+                                                <input class="form-check-input" type="radio" name="addmoney_category" id="add_income" value="Income" {% if addmoney.addmoney_category == "Income" %}checked{% endif %} required>
+                                                Income
+                                            </label>
+                                        </div>
+    
+                                        <div>
+                                            <label>
+                                                Amount:<br>
+                                                <input type="number" name="amount" value="{{ addmoney.amount }}" required>
+                                            </label><br><br>
+                                        </div>
+    
+                                        <div>
+                                            <label>
+                                                Expense Date:<br>
+                                                <input type="date" name="Date" value="{{ addmoney.Date }}" required>
+                                            </label><br>
+                                        </div>
+    
+                                        <div class="f1">
+                                            <label>Select Category:</label><br>
+                                            <select class="Category" name="expense_category" required>
+                                                <option value="Food" {% if addmoney.expense_category == "Food" %}selected{% endif %}>Food</option>
+                                                <option value="Travel" {% if  addmoney.expense_category == "Travel" %}selected{% endif %}>Travel</option>
+                                                <option value="Shopping" {% if addmoney.expense_category == "Shopping" %}selected{% endif %}>Shopping</option>
+                                                <option value="Necessities" {% if addmoney.expense_category == "Necessities" %}selected{% endif %}>Necessities</option>
+                                                <option value="Entertainment" {% if addmoney.expense_category   == "Entertainment" %}selected{% endif %}>Entertainment</option>
+                                                <option value="Others" {% if addmoney.expense_category  == "Others" %}selected{% endif %}>Others</option>
+                                            </select><br><br>
+                                        </div>
+
+                                        <div class="btn">
+                                            <button type="submit" class="b2">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>
+                                          
+                                     
+      
+                                                
+    
+    
+
+
+    
+
+    
+
+
+
+    
+
+
+
+
+                                    
+
+                                                                          

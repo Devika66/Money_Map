@@ -1,0 +1,95 @@
+
+
+
+body.bg-primary {
+    background-color: #f4f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding: 20px;
+}
+
+.card.shadow-lg.border-0.rounded-lg.mt-5 {
+    width:100%;
+    max-width: 550px;
+    border-radius: 20px;
+    border: none;
+    background-color: white;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    text-align:center ;
+}
+
+.card-header h3 {
+    margin: 0;
+    padding: 15px;
+    font-size: 1.6rem;
+}
+
+form {
+    padding: 25px;
+}
+
+.form-check {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.form-check-input {
+    margin-right: 10px;
+}
+
+input[type="number"],
+input[type="date"],
+select.Category {
+    width: 100%;
+    padding: 10px 15px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input[type="number"]:focus,
+input[type="date"]:focus,
+select.Category:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.f1 {
+    margin-top: 15px;
+}
+
+.btn {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.b2 {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 35px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.b2:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{%  load static %}
+
+
+{% block extra_head %}
+<link rel="stylesheet"  href="{% static 'css/stats.css' %}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+{% endblock %}
+ 
+ 
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Page Heading -->
+    
+
+    <div class="row">
+        <!-- Pie Chart -->
+        <div class="col-xl-8 col-lg-7">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <i class="fas fa-chart-pie mr-1"></i>
+                    Monthly Expense
+                </div>
+                <div class="container" style="width:100%;">
+                    <div class="card-body">
+                        <canvas id="myChart" width="400" height="400"></canvas>
+                    </div>
+                </div>
+                    
+                
+            </div>
+        </div>
+
+        <!-- Monthly Record -->
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <i class="fas fa-chart-line"></i>
+                    Monthly Record
+                </div>
+
+                <div class="card-body">
+                    <p><strong>Amount to be saved:</strong> {{ user.userprofile.Savings }}</p>
+                    <p><strong>Amount spent:</strong> {{ expense}}</p>
+                    <p><strong>Amount saved:</strong> {{ remaining }}</p>
+                    <p><strong>Amount spent more than that should be saved:</strong> {{ overspent }}</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'javascript/stats.js' %}"></script>
+
+{% endblock %}
+

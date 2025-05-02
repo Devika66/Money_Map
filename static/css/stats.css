@@ -1,0 +1,58 @@
+
+/* stats.css */
+
+/* Container spacing */
+.container-fluid {
+    padding: 2rem;
+    background-color: #f8f9fc;
+}
+
+/* Card styles */
+.card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58,59,69,.15);
+}
+
+/* Card header */
+.card-header {
+    background-color: #4e73df;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+/* Card body spacing */
+.card-body {
+    padding: 1.5rem;
+    font-size: 1rem;
+}
+
+/* Monthly record section */
+.card-body p {
+    margin: 0.5rem 0;
+    color: #5a5c69;
+}
+
+/* Chart container to make it more responsive */
+canvas {
+    max-width: 100%;
+    height: 300px !important;
+}
+
+/* Responsive layout tweaks */
+@media (max-width: 768px) {
+    .col-xl-8,
+    .col-lg-7,
+    .col-xl-4,
+    .col-lg-5 {
+        width: 100%;
+        padding: 0;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+}

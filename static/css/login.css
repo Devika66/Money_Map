@@ -1,0 +1,70 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.login-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    box-shadow: 0 0 20px #000;
+    text-align: center;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.login-box .remember {
+    text-align: left;
+    margin: 10px 0;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: lime;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-box button:hover {
+    background-color: #aaffaa;
+}
+
+.login-box .links {
+    margin-top: 10px;
+}
+
+.login-box .links a {
+    color: #00ffff;
+    text-decoration: none;
+    font-size: 0.9em;
+}

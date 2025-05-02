@@ -1,0 +1,63 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/stats.css' %}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-pie mr-1"></i> Weekly Expense
+                </div>
+                <div class="container" style="width:100%;">
+                    <div class="card-body">
+                        <canvas id='myPieChart' width="400" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-pie mr-1"></i> Weekly Summary
+                </div>
+                <div class="card-body">
+                    <p>Amount spent this week: {{expense}}</p>
+                    <p>Amount saved this week: {{remaining}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'javascript/weekly.js' %}"></script>
+
+{% endblock %}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

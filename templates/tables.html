@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="{% static 'css/table.css' %}" rel="stylesheet" >
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <h1 class="mt-4">History</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/index">Dashboard</a></li>
+        <li class="breadcrumb-item active">HISTORY</li>
+    </ol>
+    <form action="/search/" method="get">
+        From: <input type="date" name="fromdate" required>
+        To:<input type="date" name="todate" required>
+        {% csrf_token %}
+        <input type="submit" value="search/">
+        <a href="{% url 'tables'  %}" class="btn btn-success" role="button" aria-pressed="true" style="height:32px;width:100px">Search all</a>
+    </form>
+    <br>
+    <br>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table mr-1"></i>
+            DataTable
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>What you added</th>
+                            <th>Amount</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for money in addmoney %}
+                        <tr>
+                            <td>{{money.addmoney_category}}</td>
+                            <td>{{money.amount}}</td>
+                            <td>{{money.expense_category}}</td>
+                            <td>{{money.Date}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+
+<script> 
+    $(document).ready(function () {
+        $('#dataTable').DataTable();
+    });
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+        
+           
+                    
+                   
+
+                        
+
+                      
+               
+               
+                           
+          
+           

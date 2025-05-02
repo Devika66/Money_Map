@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Money_Map -Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="login-box">
+        <h2>Money_Map</h2>
+        <form method="post" action="{% url 'handleLogin' %}">
+            {% csrf_token %}
+            <label>Username</label>
+            <input type="text" name="loginuname" placeholder="Enter user name" required>
+            <label>Password</label>
+            <input type="password" name="loginpassword1" placeholder="Enter password" required>
+            <div class="remember">
+                <input type="checkbox" name="remember"> Remember password
+            </div>
+            <button type="submit">Login</button>
+            <div class="links">
+                <a href="{% url 'reset_password' %}">Forget password?</a><br>
+                <a href="{% url 'register' %}">Need an account? Sign up!</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
