@@ -1,1 +1,1 @@
-# Money_Map
+Build an expense tracker application using django backend.After login,users can add expenses by category and generate weekly or monthly reports.
